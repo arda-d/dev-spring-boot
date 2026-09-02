@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Student Form</title>
+</head>
+
+<body>
+<h3> Student Registration Form</h3>
+<form th:action = "@{/postStudentForm}" th:object = "${student}" method = "POST">
+    First Name: <input type="text" name="firstName" th:field = "*{firstName}">
+    <br><br>
+    Last Name: <input type="text" name="lastName" th:field = "*{lastName}">
+    <br><br>
+    Country:
+    <select th:field="*{country}">
+        <option th:each="country : ${countries}" th:value="${country}" th:text="${country}">
+    </select>
+    <br><br>
+    Favorite Programming Language:
+    <input type = "radio" th:field="*{programmingLanguage}" th:value = "Go">Go</input>
+    <input type = "radio" th:field="*{programmingLanguage}" th:value = "Java">Java</input>
+    <input type = "radio" th:field="*{programmingLanguage}" th:value = "Pyhton">Pyhton</input>
+    <br><br>
+    Favorite Operating System:
+    <input type = "checkbox" th:field ="*{operatingSystem}" th:value = "Linux">Linux</input>
+    <input type = "checkbox" th:field ="*{operatingSystem}" th:value = "Windows">Windows</input>
+    <input type = "checkbox" th:field ="*{operatingSystem}" th:value = "Mac">Mac</input>
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
+

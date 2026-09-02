@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Student Form</title>
+</head>
+
+<body>
+<h3> Student Confirmation Form</h3>
+The Student is confirmed: <span th:text="${student.firstName} + ' ' + ${student.lastName} + ' ' + ${student.country}"></span>
+<br><br>
+Favorite Language: <span th:text="${student.programmingLanguage}"></span>
+<br><br>
+Favorite Operating System: <span th:text="${student.operatingSystem}"></span>
+<ul>
+    <li th:each = "tempSystem:${student.operatingSystem}" th:text="${tempSystem}"></li>
+</ul>
+</body>
+</html>

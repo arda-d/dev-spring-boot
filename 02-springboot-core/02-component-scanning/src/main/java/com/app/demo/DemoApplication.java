@@ -1,0 +1,16 @@
+package com.app.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication(
+		scanBasePackages = {"demo.util","com.app.demo"}
+)
+public class DemoApplication {
+
+	public static void main(String[] args)
+	{
+		SpringApplication.run(DemoApplication.class, args);
+	}
+
+}
